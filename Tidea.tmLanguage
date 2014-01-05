@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>uuid</key>
+    <string>77AC23B6-8A90-11D9-BAA4-000A9584EC8D</string>
+    <key>name</key>
+    <string>Tidea</string>
+    <key>scopeName</key>
+    <string>text.Tidea</string>
+    <key>fileTypes</key>
+    <array>
+    <string>txt</string>
+    </array>
+    <key>patterns</key>
+    <array>
+        <dict>
+            <key>name</key>
+            <string>unicode.symbol</string>
+            <key>match</key>
+            <string>♔|♕|♖|♗|♘|♙|♚|♛|♜|♝|♞|♟|♠|♡|♢|♣|♤|♥|♦|♧|☎|☏|☐|☑|☒|☓|✁|✂|✃|✄|✅|✆|✇|✈|✉|✎|✏|✐|✑|✒|✓|✔|✕|✖|✗|✘|♩|♪|♫|♬|♭|♮|♯|☠|☡|☢|☣|☤|☥|☦|☧|☨|☩|☪|☫|☬|☭|☮|☯|♀|♂|♨|☀|☁|☂|☃|☄|★|☆|☇|☈|☉|☊|☋|☌|☍|☔|☚|☛|☜|☝|☞|☟|☹|☺|☻|✙|✚|✛|✜|✝|✞|✟|♁|♃|♄|♅|♆|♇|♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓</string>
+        </dict>
+        <dict>
+            <key>name</key>
+            <string>link.external</string>
+            <key>match</key>
+            <string>(ftp:\/\/|https?:\/\/)?([\w\.-]+)\.[a-z]{2,6}(\.|\/)\S*</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>link.email</string>
+            <key>match</key>
+            <string>[^\s][\w\.-]+@[\w-]+\.[a-z\.]{2,6}</string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>link.internal</string>
+            <key>match</key>
+            <string>\[\[[^\]]+\]\]| .+ </string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Hightlight U+202d</string>
+            <key>name</key>
+            <string>markup.hightlight</string>
+            <key>match</key>
+            <string>‭.+?‭</string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Gray color U+202c</string>
+            <key>name</key>
+            <string>comment.block</string>
+            <key>match</key>
+            <string>‬.+?‬</string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Red color U+200b</string>
+            <key>name</key>
+            <string>keyword.control</string>
+            <key>match</key>
+            <string>​.+?​</string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Orange color U+202a</string>
+            <key>name</key>
+            <string>variable.parameter</string>
+            <key>match</key>
+            <string>‪.+?‪</string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Phone number</string>
+            <key>name</key>
+            <string>constant.numeric.txt</string>
+            <key>match</key>
+            <string>(?&lt;=\W)(0[93418]|[1-9]\d)[\.\d]{6,10}\b</string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Markdown-style bold U+200e</string>
+            <key>match</key>
+            <string>‎.+?‎</string>
+            <key>name</key>
+            <string>markup.bold</string>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>Markdown-style italics U+200f</string>
+            <key>match</key>
+            <string>‏.+?‏</string>
+            <key>name</key>
+            <string>markup.italic</string>
+        </dict>
+    </array>
+</dict>
+</plist>
