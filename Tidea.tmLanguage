@@ -18,34 +18,85 @@
             <key>name</key>
             <string>unicode.symbol</string>
             <key>match</key>
-            <string>♔|♕|♖|♗|♘|♙|♚|♛|♜|♝|♞|♟|♠|♡|♢|♣|♤|♥|♦|♧|☎|☏|☐|☑|☒|☓|✁|✂|✃|✄|✅|✆|✇|✈|✉|✎|✏|✐|✑|✒|✓|✔|✕|✖|✗|✘|♩|♪|♫|♬|♭|♮|♯|☠|☡|☢|☣|☤|☥|☦|☧|☨|☩|☪|☫|☬|☭|☮|☯|♀|♂|♨|☀|☁|☂|☃|☄|★|☆|☇|☈|☉|☊|☋|☌|☍|☔|☚|☛|☜|☝|☞|☟|☹|☺|☻|✙|✚|✛|✜|✝|✞|✟|♁|♃|♄|♅|♆|♇|♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓</string>
+            <string>°|¹|²|³|⁴|⁵|⁶|⁷|⁸|⁹|⁽|⁾|♔|♕|♖|♗|♘|♙|♚|♛|♜|♝|♞|♟|♠|♡|♢|♣|♤|♥|♦|♧|☎|☏|☐|☑|☒|☓|✁|✂|✃|✄|✅|✆|✇|✈|✉|✎|✏|✐|✑|✒|✓|✔|✕|✖|✗|✘|♩|♪|♫|♬|♭|♮|♯|☠|☡|☢|☣|☤|☥|☦|☧|☨|☩|☪|☫|☬|☭|☮|☯|♀|♂|♨|☀|☁|☂|☃|☄|★|☆|☇|☈|☉|☊|☋|☌|☍|☔|☚|☛|☜|☝|☞|☟|☹|☺|☻|✙|✚|✛|✜|✝|✞|✟|♁|♃|♄|♅|♆|♇|♈|♉|♊|♋|♌|♍|♎|♏|♐|♑|♒|♓</string>
         </dict>
         <dict>
             <key>name</key>
-            <string>link.external</string>
+            <string>entity.name.function.link.external</string>
             <key>match</key>
             <string>(ftp:\/\/|https?:\/\/)?([\w\.-]+)\.[a-z]{2,6}(\.|\/)\S*</string>
         </dict>
 
         <dict>
             <key>name</key>
-            <string>link.email</string>
+            <string>variable.parameter.link.email</string>
             <key>match</key>
             <string>[^\s][\w\.-]+@[\w-]+\.[a-z\.]{2,6}</string>
         </dict>
 
         <dict>
             <key>name</key>
-            <string>link.internal</string>
+            <string>entity.name.function.link.internal</string>
             <key>match</key>
-            <string>\[\[[^\]]+\]\]| .+ </string>
+            <string>\[\[[^\]]+\]\]| .+?? </string>
+        </dict>
+
+        <dict>
+            <key>name</key>
+            <string>Alternatives</string>
+            <key>begin</key>
+            <string>\[</string>
+            <key>end</key>
+            <string>\]</string>
+            <key>beginCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>comment.line, tidea.gray</string>
+                </dict>
+            </dict>
+            <key>endCaptures</key>
+            <dict>
+                <key>0</key>
+                <dict>
+                    <key>name</key>
+                    <string>comment.line, tidea.gray</string>
+                </dict>
+            </dict>
+            <key>patterns</key>
+            <array>
+                <dict>
+                    <key>name</key>
+                    <string>comment.line, tidea.gray</string>
+                    <key>match</key>
+                    <string>/</string>
+                </dict>
+                <dict>
+                    <key>include</key>
+                    <string>$self</string>
+                    <key>name</key>
+                    <string>ThisAlternative</string>
+                    <key>match</key>
+                    <string>.+?</string>
+                </dict>
+            </array>
+        </dict>
+
+        <dict>
+            <key>comment</key>
+            <string>First dash in new line exclude spaces</string>
+            <key>name</key>
+            <string>tidea.firstchar</string>
+            <key>match</key>
+            <string>^(?:\s*)- |(?&lt;!\.)\.$</string>
         </dict>
 
         <dict>
             <key>comment</key>
             <string>Hightlight U+202d</string>
             <key>name</key>
-            <string>markup.hightlight</string>
+            <string>invalid, tidea.hightlight</string>
             <key>match</key>
             <string>‭.+?‭</string>
         </dict>
@@ -54,7 +105,7 @@
             <key>comment</key>
             <string>Gray color U+202c</string>
             <key>name</key>
-            <string>comment.block</string>
+            <string>comment.line, tidea.gray</string>
             <key>match</key>
             <string>‬.+?‬</string>
         </dict>
@@ -63,7 +114,7 @@
             <key>comment</key>
             <string>Red color U+200b</string>
             <key>name</key>
-            <string>keyword.control</string>
+            <string>keyword.control, tidea.red</string>
             <key>match</key>
             <string>​.+?​</string>
         </dict>
@@ -72,7 +123,7 @@
             <key>comment</key>
             <string>Orange color U+202a</string>
             <key>name</key>
-            <string>variable.parameter</string>
+            <string>variable.parameter, tidea.orange</string>
             <key>match</key>
             <string>‪.+?‪</string>
         </dict>
@@ -83,25 +134,25 @@
             <key>name</key>
             <string>constant.numeric.txt</string>
             <key>match</key>
-            <string>(?&lt;=\W)(0[93418]|[1-9]\d)[\.\d]{6,10}\b</string>
+            <string>(?&lt;=[^\w\.])(0[93418]|[1-9]\d)[\.\d]{6,10}(?!(\.\d|\w))</string>
         </dict>
 
         <dict>
             <key>comment</key>
-            <string>Markdown-style bold U+200e</string>
+            <string>bold U+200e</string>
             <key>match</key>
             <string>‎.+?‎</string>
             <key>name</key>
-            <string>markup.bold</string>
+            <string>tidea.bold</string>
         </dict>
 
         <dict>
             <key>comment</key>
-            <string>Markdown-style italics U+200f</string>
+            <string>italic U+200f</string>
             <key>match</key>
             <string>‏.+?‏</string>
             <key>name</key>
-            <string>markup.italic</string>
+            <string>tidea.italic</string>
         </dict>
     </array>
 </dict>
