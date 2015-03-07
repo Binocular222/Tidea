@@ -17,3 +17,12 @@ class paste_object(sublime_plugin.TextCommand):
 		shutil.copy(new_source_path, CurPath)
 		self.view.window().run_command("paste_simple", {"string": "[[" + NewBaseName + "]]"})
 		self.window.run_command('hide_panel')
+
+
+# command = "IfExist, %clipboard% \
+#     `n Dir =" + CurPath + "\
+#     `n FileCreateDir, %Dir% \
+#     `n FileCopy, %clipboard%, %Dir% \
+#     `n SplitPath, clipboard, OutFileName \
+#     `n clipboard = [[obj\\%OutFileName%]] \
+#     `n SendInput ^v"

@@ -22,7 +22,7 @@
         </dict>
         <dict>
             <key>name</key>
-            <string>entity.name.function.link.external</string>
+            <string>tidea.link.external</string>
             <key>match</key>
             <string>(ftp:\/\/|https?:\/\/)?([\w\.-]+)\.[a-z]{2,6}(\.|\/)\S*</string>
         </dict>
@@ -36,7 +36,7 @@
 
         <dict>
             <key>name</key>
-            <string>entity.name.function.link.internal</string>
+            <string>tidea.link.internal</string>
             <key>match</key>
             <string>\[\[[^\]]+\]\]| .+?? </string>
         </dict>
@@ -153,6 +153,31 @@
             <string>‏.+?‏</string>
             <key>name</key>
             <string>tidea.italic</string>
+        </dict>
+
+         <dict>
+            <key>comment</key>
+            <string>Symbol for terminology</string>
+            <key>match</key>
+            <string>(^|\s)(:)(\S[\w\d _-{}]*\S)(:)(\s|$)</string>
+            <key>captures</key>
+            <dict>
+                <key>3</key>
+                <dict>
+                    <key>name</key>
+                    <string>meta.class.tidea.symbol</string>
+                </dict>
+                <key>2</key>
+                <dict>
+                    <key>name</key>
+                    <string>tidea.gray</string>
+                </dict>
+                <key>4</key>
+                <dict>
+                    <key>name</key>
+                    <string>tidea.gray</string>
+                </dict>
+            </dict>
         </dict>
     </array>
 </dict>

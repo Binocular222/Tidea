@@ -113,6 +113,7 @@ class tidea_link(sublime_plugin.TextCommand):
 			self.view.sel().add(sublime.Region(CursorLocationA, CursorLocationB+1))
 			self.view.replace(edit, self.view.sel()[0], ScopeText.strip("]"))
 		else:
-			window.run_command("move_to", {"to": "hardeol"})        # Add new line
-			window.run_command("insert", {"characters": "\n"})      # Add new line
+			window.run_command('goto_definition')
+			# window.run_command("move_to", {"to": "hardeol"})        # Add new line
+			# window.run_command("insert", {"characters": "\n"})      # Add new line
 

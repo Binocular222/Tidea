@@ -6,7 +6,7 @@
 	// "tab_completion": false,
 	"auto_complete_commit_on_tab": true,
 	"default_encoding": "UTF-16 LE with BOM",
-	"font_face": "CONSOLAS",
+	"font_face": "Consolas",
 	// "font_options": "gray_antialias",
 	"auto_indent": true,
 	"detect_indentation": false,
@@ -17,5 +17,7 @@
 	"indent_guide_options": ["draw_normal"],
 	"indent_subsequent_lines": true,
 	"tab_size": 4,
+	// "rulers": [8,16,24,32],
+	"extensions": ["txt"],
 	"auto_complete_selector": "text.Tidea",
 }

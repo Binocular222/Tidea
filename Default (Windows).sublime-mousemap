@@ -2,5 +2,5 @@
 	{
 		"button": "button1", "count": 2, "modifiers": ["ctrl"],
 		"press_command": "tidea_link",
-	}
+	},
 ]
